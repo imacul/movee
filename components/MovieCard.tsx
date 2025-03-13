@@ -1,15 +1,15 @@
 import { FC } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 interface Movie {
+  id: string;
   title: string;
   vote_average?: number;
   poster_path?: string;
   release_date?: string;
   original_language?: string;
   thumbnail?: string;
-  creator?: string;
-  year?: string;
   videoUrl?: string;
 }
 
@@ -26,19 +26,19 @@ const MovieCard: FC<MovieCardProps> = ({ movie }) => {
 
   return (
     <div className="movie-card">
-      <Link href={`/movies/${title}`}>
-        <img src={imageUrl} alt={title} />
+      <Link href={`/movie/${movie.id}`}>
+        <Image src={imageUrl} alt={title} height={500} width={300} />
         <div className="mt-4">
           <h3 className="text-title">{title}</h3>
           {videoUrl && (
-            <a
+            <Link
               href={videoUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="watch-btn"
             >
               🎬 Watch Now
-            </a>
+            </Link>
           )}
         </div>
       </Link>
