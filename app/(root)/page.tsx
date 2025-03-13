@@ -86,7 +86,7 @@ const Home = () => {
           </header>
 
           <section className="all-movies">
-            <h1>All Movies</h1>
+            <h1 className="mt-8">All Movies</h1>
             {isLoading ? (
               <div className="text-center justify-center items-center">
                 <Spinner />

@@ -5,7 +5,7 @@ interface MoviePageProps {
 }
 
 const MoviePage = async ({ params }: MoviePageProps) => {
-  const { id } = await params;
+  const { id } = params;
 
   // Fetch movie details from YouTube API
   const YOUTUBE_API_KEY = process.env.NEXT_PUBLIC_YOUTUBE_API_KEY;
